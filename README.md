@@ -160,6 +160,7 @@ docker-compose logs -f autoupdate
 ### Node'u Yeniden Başlatma
 Durdurun:
 ```bash
+cd integrity-node
 docker-compose down
 ```
 
@@ -171,8 +172,9 @@ docker-compose up -d --pull always
 ### Tamamen Temizlik
 Container'ları durdurun ve temizleyin:
 ```bash
+cd integrity-node
 docker-compose down
-docker system prune -f
+sudo docker system prune -a
 ```
 
 ## Sorun Giderme
