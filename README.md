@@ -148,20 +148,28 @@ docker ps
 ```
 
 Node loglarını izleyin:
+
+Not: docker-compose logs ile logları kontrol edecekseniz `cd integrity-node` ile integrity-node klasörünün içine girmeniz gerekiyor ilk önce. Kolay olsun diye ben ona göre ayarladım ama normal şekilde loglara bakmak isterseniz iki komut var birincisi `docker logs -f hybrid-node` ikincisi `docker logs -f hybrid-node-autoupdate`
+
 ```bash
+cd
+cd integrity-node
 docker-compose logs -f hybrid-node
 ```
 
 Watchtower loglarını izleyin:
 ```bash
+cd
+cd integrity-node
 docker-compose logs -f autoupdate
 ```
 
 ### Node'u Yeniden Başlatma
 Durdurun:
 ```bash
+cd
 cd integrity-node
-docker-compose down
+docker-compose logs -f hybrid-node
 ```
 
 Güncelleme ile başlatın:
@@ -194,10 +202,12 @@ sudo netstat -tulpn | grep :PORT_NUMBER
 ### Log Kontrolü
 Detaylı loglar:
 ```bash
+cd integrity-node
 docker-compose logs --tail=100 hybrid-node
 ```
 
 Hata logları:
 ```bash
+cd integrity-node
 docker-compose logs hybrid-node 2>&1 | grep -i error
 ```
