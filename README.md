@@ -169,7 +169,7 @@ Durdurun:
 ```bash
 cd
 cd integrity-node
-docker-compose logs -f hybrid-node
+docker-compose down
 ```
 
 Güncelleme ile başlatın:
